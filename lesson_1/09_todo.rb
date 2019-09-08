@@ -93,6 +93,17 @@ class TodoList
     "---- #{title} ----"
     @todos.each { |todo| puts todo }
   end
+
+  def each
+    counter = 0
+
+    while counter < size
+      yield(item_at(counter))
+      counter += 1
+    end
+
+    self
+  end
 end
 
 # given
@@ -106,12 +117,6 @@ list.add(todo1)
 list.add(todo2)
 list.add(todo3)
 
-puts list
-
-list.pop
-
-puts list
-
-list.mark_done_at(1)
-
-puts list
+list.each do |todo|
+  puts todo                   # calls Todo#to_s
+end
