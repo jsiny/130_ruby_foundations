@@ -104,6 +104,16 @@ class TodoList
 
     self
   end
+
+  def select
+    result = TodoList.new(title)
+
+    each do |to_do|
+      result << to_do if yield(to_do)
+    end
+
+    result
+  end
 end
 
 # given
@@ -120,3 +130,9 @@ list.add(todo3)
 list.each do |todo|
   puts todo                   # calls Todo#to_s
 end
+
+todo1.done!
+
+results = list.select { |todo| todo.done? }    # you need to implement this method
+
+puts results.inspect
