@@ -90,8 +90,9 @@ class TodoList
   end
 
   def to_s
-    "---- #{title} ----"
-    @todos.each { |todo| puts todo }
+    text = "---- #{title} ----\n"
+    text << @todos.map(&:to_s).join("\n")
+    text
   end
 
   def each
@@ -146,10 +147,3 @@ todo2 = Todo.new("Clean room")
 todo3 = Todo.new("Go to gym")
 
 list = TodoList.new("Today's Todos")
-
-list.add(todo1)
-list.add(todo2)
-list.add(todo3)
-
-list.mark_done("Buy milk")
-puts list
