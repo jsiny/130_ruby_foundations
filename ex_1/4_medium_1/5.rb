@@ -11,7 +11,7 @@ gather(items) do |*produce, wheat|
   puts wheat
 end
 
-gather(items) do |apple, *produce, wheat |
+gather(items) do |apple, *produce, wheat|
   puts apple
   puts produce.join(', ')
   puts wheat
