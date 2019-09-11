@@ -6,4 +6,4 @@ def gather(items)
   puts "Nice selection of food we have gathered!"
 end
 
-gather(items) { |produce| puts produce.join(', ')}
+gather(items) { |produce| puts produce.join(', ') }
