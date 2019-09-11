@@ -1,3 +1,4 @@
 # Exercises I Need to Re-Do
 
-* [ ] Ex 5.1 (Banner Class) with **Further Exploration** - First done: 31/07/19
+* [ ] Ex 4.1 (Text Analyzer - Sandwich Code) - First done: 11/09/2019
+
