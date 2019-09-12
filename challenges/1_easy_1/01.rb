@@ -5,6 +5,7 @@ class Series
 
   def slices(count)
     raise ArgumentError if count > @numbers.size
+
     @numbers.each_cons(count).to_a
   end
 end
