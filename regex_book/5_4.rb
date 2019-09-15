@@ -1,0 +1,1 @@
+/^(A|The) [a-z][a-z][a-z][a-z] (dog|cat)$/
