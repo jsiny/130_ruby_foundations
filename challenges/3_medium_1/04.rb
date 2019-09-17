@@ -22,6 +22,7 @@ class Translation
   def self.of_rna(strand)
     strand.scan(/.../).each_with_object([]) do |codon, rna|
       return rna if of_codon(codon) == 'STOP'
+
       rna << of_codon(codon)
     end
   end
