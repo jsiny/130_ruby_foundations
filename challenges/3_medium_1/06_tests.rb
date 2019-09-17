@@ -43,7 +43,7 @@ class SchoolTest < Minitest::Test
     assert_equal [], school.grade(1)
   end
 
-  def test_sort_school # rubocop:disable Metrics/MethodLength
+  def test_sort_school
     [
       ['Jennifer', 4], ['Kareem', 6],
       ['Christopher', 4], ['Kyle', 3]
