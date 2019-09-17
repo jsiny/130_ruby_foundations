@@ -23,5 +23,5 @@ class Meetup
     self.date += 1 until date.send weekday
   end
 end
-
+  
 # Done in 45 min
