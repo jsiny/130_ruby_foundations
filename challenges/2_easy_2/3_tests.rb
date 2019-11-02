@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/reporters'
 Minitest::Reporters.use!
-require_relative '3_bis'
+require_relative '3_nathan'
 
 # rubocop:disable Metrics/LineLength
 class BeerSongTest < Minitest::Test
