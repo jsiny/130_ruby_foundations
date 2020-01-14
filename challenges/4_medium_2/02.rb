@@ -1,9 +1,9 @@
 class WordProblem
-  @@ops = { 'plus' => :+, 'multiplied' => :*, 'minus' => :-, 'divided' => :/ }
+  OPS = { 'plus' => :+, 'multiplied' => :*, 'minus' => :-, 'divided' => :/ }
 
-  def initialize(s)
-    @nums = s.scan(/-?\d+/).map(&:to_i)
-    @op   = s.scan(/(plus|minus|multiplied|divided)/).map { |op| @@ops[op[0]] }
+  def initialize(str)
+    @nums = str.scan(/-?\d+/).map(&:to_i)
+    @op   = str.scan(/(plus|minus|multiplied|divided)/).map { |op| OPS[op[0]] }
     raise ArgumentError unless valid_problem?
   end
 
