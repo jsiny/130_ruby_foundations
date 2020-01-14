@@ -1,16 +1,14 @@
 class WordProblem
-  @@operations = { 'plus'  => :+,   'multiplied' => :*, 
-                   'minus' => :-,   'divided'    => :/ }
+  @@ops = { 'plus' => :+, 'multiplied' => :*, 'minus' => :-, 'divided' => :/ }
 
-  def initialize(problem)
-    @problem = problem
-    @nums    = @problem.scan(/-?\d+/).map(&:to_i)
-    @op      = @problem.scan(/(plus|minus|multiplied|divided)/).flatten
+  def initialize(s)
+    @nums = s.scan(/-?\d+/).map(&:to_i)
+    @op   = s.scan(/(plus|minus|multiplied|divided)/).map { |op| @@ops[op[0]] }
     raise ArgumentError unless valid_problem?
   end
 
   def answer
-    @nums.reduce { |result, num| result.send(@@operations[@op.shift], num) }
+    @nums.reduce { |result, num| result.send(@op.shift, num) }
   end
 
   def valid_problem?
